@@ -1,0 +1,1336 @@
+knesset,sector,letter,votes
+19,Arab,עם,130348
+19,Arab,ו,92449
+19,Arab,ד,89594
+19,Arab,אמת,13550
+19,Arab,מרץ,11331
+19,Arab,שס,10205
+19,Arab,מחל,9486
+19,Arab,כן,5253
+19,Arab,צפ,4954
+19,Arab,פה,1978
+19,Arab,טב,1185
+19,Arab,ץ,1080
+19,Arab,ק,882
+19,Arab,צק,597
+19,Arab,ג,588
+19,Arab,קנ,585
+19,Arab,נץ,323
+19,Arab,פץ,245
+19,Arab,רק,239
+19,Arab,פ,218
+19,Arab,ז,208
+19,Arab,הפ,178
+19,Arab,פז,162
+19,Arab,פנ,151
+19,Arab,הק,127
+19,Arab,זך,122
+19,Arab,יק,108
+19,Arab,נק,98
+19,Arab,ני,73
+19,Arab,פי,72
+19,Arab,נ,71
+19,Arab,הי,55
+19,Druze,מחל,9145
+19,Druze,כן,7023
+19,Druze,שס,4945
+19,Druze,ו,4872
+19,Druze,צפ,3465
+19,Druze,אמת,3239
+19,Druze,ד,1604
+19,Druze,פה,1439
+19,Druze,טב,1211
+19,Druze,עם,902
+19,Druze,מרץ,832
+19,Druze,קנ,183
+19,Druze,ץ,176
+19,Druze,ג,68
+19,Druze,פז,55
+19,Druze,ק,49
+19,Druze,צק,30
+19,Druze,הפ,28
+19,Druze,ז,25
+19,Druze,פץ,25
+19,Druze,רק,21
+19,Druze,נק,16
+19,Druze,נץ,15
+19,Druze,זך,11
+19,Druze,פי,11
+19,Druze,הי,10
+19,Druze,פנ,10
+19,Druze,ני,9
+19,Druze,פ,7
+19,Druze,יק,4
+19,Druze,נ,4
+19,Druze,הק,3
+19,Haredi,ג,133261
+19,Haredi,שס,56502
+19,Haredi,טב,5122
+19,Haredi,נץ,3920
+19,Haredi,מחל,3742
+19,Haredi,פז,2867
+19,Haredi,אמת,625
+19,Haredi,ץ,618
+19,Haredi,פה,595
+19,Haredi,קנ,233
+19,Haredi,צפ,228
+19,Haredi,מרץ,165
+19,Haredi,כן,130
+19,Haredi,יק,49
+19,Haredi,פץ,41
+19,Haredi,ז,40
+19,Haredi,זך,23
+19,Haredi,פנ,23
+19,Haredi,רק,18
+19,Haredi,ו,17
+19,Haredi,ד,16
+19,Haredi,פ,15
+19,Haredi,הפ,13
+19,Haredi,עם,13
+19,Haredi,צק,12
+19,Haredi,פי,9
+19,Haredi,ק,9
+19,Haredi,הק,7
+19,Haredi,נ,7
+19,Haredi,ני,5
+19,Haredi,נק,4
+19,Haredi,הי,3
+19,Jewish (other),מחל,810710
+19,Jewish (other),פה,504884
+19,Jewish (other),אמת,391300
+19,Jewish (other),טב,306294
+19,Jewish (other),שס,244714
+19,Jewish (other),צפ,171289
+19,Jewish (other),מרץ,151858
+19,Jewish (other),כן,61817
+19,Jewish (other),נץ,57404
+19,Jewish (other),ג,56923
+19,Jewish (other),ץ,41235
+19,Jewish (other),קנ,34134
+19,Jewish (other),ז,26072
+19,Jewish (other),פז,23546
+19,Jewish (other),יק,18445
+19,Jewish (other),ו,14257
+19,Jewish (other),רק,7191
+19,Jewish (other),זך,5449
+19,Jewish (other),עם,4753
+19,Jewish (other),ד,4410
+19,Jewish (other),הפ,3284
+19,Jewish (other),פנ,2461
+19,Jewish (other),ק,2431
+19,Jewish (other),צק,2111
+19,Jewish (other),פי,1790
+19,Jewish (other),פץ,1745
+19,Jewish (other),פ,1526
+19,Jewish (other),נק,1134
+19,Jewish (other),ני,878
+19,Jewish (other),נ,637
+19,Jewish (other),הק,464
+19,Jewish (other),הי,363
+19,Double envelope,מחל,52080
+19,Double envelope,פה,34562
+19,Double envelope,טב,32173
+19,Double envelope,אמת,23404
+19,Double envelope,שס,15502
+19,Double envelope,צפ,9231
+19,Double envelope,קנ,8599
+19,Double envelope,מרץ,8217
+19,Double envelope,נץ,5113
+19,Double envelope,ג,5052
+19,Double envelope,כן,4751
+19,Double envelope,ץ,2581
+19,Double envelope,עם,2434
+19,Double envelope,ו,1844
+19,Double envelope,ז,1735
+19,Double envelope,פז,1419
+19,Double envelope,ד,1406
+19,Double envelope,רק,648
+19,Double envelope,זך,370
+19,Double envelope,יק,333
+19,Double envelope,פ,310
+19,Double envelope,פנ,254
+19,Double envelope,ק,175
+19,Double envelope,הפ,137
+19,Double envelope,צק,127
+19,Double envelope,פץ,120
+19,Double envelope,נק,100
+19,Double envelope,פי,90
+19,Double envelope,ני,62
+19,Double envelope,הק,48
+19,Double envelope,נ,42
+19,Double envelope,הי,30
+20,Arab,ודעם,408883
+20,Arab,אמת,16689
+20,Arab,מרצ,12709
+20,Arab,מחל,6345
+20,Arab,שס,4601
+20,Arab,ל,4593
+20,Arab,כ,4211
+20,Arab,ע,2931
+20,Arab,פה,2221
+20,Arab,יץ,1145
+20,Arab,טב,722
+20,Arab,קץ,585
+20,Arab,קנ,468
+20,Arab,ףץ,267
+20,Arab,ג,245
+20,Arab,נץ,208
+20,Arab,רק,170
+20,Arab,ף,90
+20,Arab,זץ,86
+20,Arab,זך,64
+20,Arab,נז,59
+20,Arab,ז,52
+20,Arab,ני,49
+20,Arab,יז,47
+20,Arab,י,37
+20,Druze,אמת,9196
+20,Druze,ודעם,7882
+20,Druze,כ,7536
+20,Druze,ל,6982
+20,Druze,שס,3160
+20,Druze,מחל,2812
+20,Druze,פה,1498
+20,Druze,קץ,1333
+20,Druze,מרצ,943
+20,Druze,טב,359
+20,Druze,קנ,204
+20,Druze,ע,115
+20,Druze,ףץ,46
+20,Druze,רק,17
+20,Druze,ג,15
+20,Druze,ף,15
+20,Druze,יץ,11
+20,Druze,זך,6
+20,Druze,זץ,6
+20,Druze,נץ,6
+20,Druze,ני,4
+20,Druze,ז,3
+20,Druze,י,3
+20,Druze,יז,3
+20,Druze,נז,3
+20,Haredi,ג,129911
+20,Haredi,שס,44840
+20,Haredi,קץ,12763
+20,Haredi,מחל,4406
+20,Haredi,טב,2201
+20,Haredi,כ,590
+20,Haredi,אמת,580
+20,Haredi,פה,362
+20,Haredi,ל,328
+20,Haredi,קנ,266
+20,Haredi,מרצ,169
+20,Haredi,ףץ,99
+20,Haredi,נז,77
+20,Haredi,ודעם,27
+20,Haredi,נץ,23
+20,Haredi,רק,13
+20,Haredi,ף,10
+20,Haredi,י,8
+20,Haredi,זך,7
+20,Haredi,ז,6
+20,Haredi,ע,6
+20,Haredi,יז,3
+20,Haredi,זץ,2
+20,Haredi,ני,2
+20,Haredi,יץ,1
+20,Jewish (other),מחל,912164
+20,Jewish (other),אמת,718646
+20,Jewish (other),פה,345636
+20,Jewish (other),כ,282533
+20,Jewish (other),טב,251788
+20,Jewish (other),ל,193701
+20,Jewish (other),שס,178665
+20,Jewish (other),מרצ,141090
+20,Jewish (other),קץ,103719
+20,Jewish (other),ג,73704
+20,Jewish (other),קנ,37770
+20,Jewish (other),ודעם,22492
+20,Jewish (other),רק,2481
+20,Jewish (other),ףץ,1928
+20,Jewish (other),נז,1544
+20,Jewish (other),ע,732
+20,Jewish (other),ף,679
+20,Jewish (other),זץ,619
+20,Jewish (other),נץ,536
+20,Jewish (other),ני,402
+20,Jewish (other),י,334
+20,Jewish (other),ז,227
+20,Jewish (other),יץ,180
+20,Jewish (other),יז,151
+20,Jewish (other),זך,147
+20,Double envelope,מחל,59681
+20,Double envelope,אמת,41202
+20,Double envelope,טב,28840
+20,Double envelope,פה,21885
+20,Double envelope,כ,20490
+20,Double envelope,מרצ,10618
+20,Double envelope,שס,10347
+20,Double envelope,ל,9302
+20,Double envelope,קנ,8472
+20,Double envelope,ודעם,7299
+20,Double envelope,קץ,6758
+20,Double envelope,ג,6268
+20,Double envelope,ע,517
+20,Double envelope,רק,311
+20,Double envelope,ףץ,153
+20,Double envelope,נז,119
+20,Double envelope,ף,101
+20,Double envelope,נץ,50
+20,Double envelope,ז,49
+20,Double envelope,זץ,48
+20,Double envelope,יץ,48
+20,Double envelope,ני,45
+20,Double envelope,י,41
+20,Double envelope,יז,19
+20,Double envelope,זך,18
+21,Arab,ום,169542
+21,Arab,דעם,133470
+21,Arab,מרצ,30799
+21,Arab,פה,19920
+21,Arab,שס,6686
+21,Arab,כ,5847
+21,Arab,מחל,5653
+21,Arab,אמת,4759
+21,Arab,ר,3332
+21,Arab,ל,3121
+21,Arab,נץ,1308
+21,Arab,טב,519
+21,Arab,צק,500
+21,Arab,נ,379
+21,Arab,נר,319
+21,Arab,ק,265
+21,Arab,קף,240
+21,Arab,ףי,239
+21,Arab,ג,227
+21,Arab,ז,219
+21,Arab,ךק,196
+21,Arab,ץי,170
+21,Arab,ףץ,167
+21,Arab,ץ,153
+21,Arab,נז,147
+21,Arab,קי,134
+21,Arab,קן,132
+21,Arab,י,129
+21,Arab,ין,128
+21,Arab,ן,117
+21,Arab,ףך,109
+21,Arab,ףנ,101
+21,Arab,ןנ,99
+21,Arab,ןך,94
+21,Arab,יץ,93
+21,Arab,ףז,80
+21,Arab,זץ,72
+21,Arab,זי,60
+21,Arab,זך,36
+21,Arab,יז,35
+21,Druze,פה,16122
+21,Druze,מרצ,7129
+21,Druze,מחל,5083
+21,Druze,ל,3765
+21,Druze,כ,3644
+21,Druze,ום,3255
+21,Druze,שס,1909
+21,Druze,דעם,1790
+21,Druze,אמת,1255
+21,Druze,צק,943
+21,Druze,י,410
+21,Druze,נ,383
+21,Druze,טב,355
+21,Druze,נר,172
+21,Druze,נז,127
+21,Druze,נץ,112
+21,Druze,ףי,106
+21,Druze,ג,71
+21,Druze,ז,51
+21,Druze,ק,35
+21,Druze,ר,31
+21,Druze,קף,30
+21,Druze,קן,29
+21,Druze,יז,23
+21,Druze,ן,16
+21,Druze,ףנ,16
+21,Druze,ףץ,14
+21,Druze,ץ,14
+21,Druze,זץ,13
+21,Druze,ךק,12
+21,Druze,ףך,12
+21,Druze,ףז,11
+21,Druze,קי,10
+21,Druze,ןנ,9
+21,Druze,ין,8
+21,Druze,ץי,7
+21,Druze,יץ,6
+21,Druze,ןך,5
+21,Druze,זי,4
+21,Druze,זך,2
+21,Haredi,ג,159869
+21,Haredi,שס,64696
+21,Haredi,מחל,9066
+21,Haredi,טב,6479
+21,Haredi,ז,1873
+21,Haredi,נ,1098
+21,Haredi,פה,1034
+21,Haredi,כ,454
+21,Haredi,ל,425
+21,Haredi,אמת,253
+21,Haredi,מרצ,175
+21,Haredi,נר,169
+21,Haredi,ףץ,63
+21,Haredi,זץ,50
+21,Haredi,ום,23
+21,Haredi,נץ,22
+21,Haredi,ן,21
+21,Haredi,ףז,20
+21,Haredi,צק,20
+21,Haredi,ק,17
+21,Haredi,דעם,15
+21,Haredi,ץ,13
+21,Haredi,קף,8
+21,Haredi,זי,7
+21,Haredi,נז,7
+21,Haredi,יז,6
+21,Haredi,קי,6
+21,Haredi,ין,5
+21,Haredi,ןך,5
+21,Haredi,ר,5
+21,Haredi,ףך,4
+21,Haredi,קן,4
+21,Haredi,ףנ,3
+21,Haredi,זך,2
+21,Haredi,י,2
+21,Haredi,ךק,2
+21,Haredi,ןנ,2
+21,Haredi,ףי,2
+21,Jewish (other),מחל,1050495
+21,Jewish (other),פה,1020103
+21,Jewish (other),שס,174920
+21,Jewish (other),אמת,173492
+21,Jewish (other),ל,161056
+21,Jewish (other),טב,141293
+21,Jewish (other),כ,134855
+21,Jewish (other),נ,126093
+21,Jewish (other),מרצ,110215
+21,Jewish (other),ז,100122
+21,Jewish (other),ג,80812
+21,Jewish (other),נר,70457
+21,Jewish (other),ום,16425
+21,Jewish (other),דעם,5600
+21,Jewish (other),ן,4103
+21,Jewish (other),ק,2754
+21,Jewish (other),צק,2171
+21,Jewish (other),זץ,2144
+21,Jewish (other),נץ,1800
+21,Jewish (other),זי,1011
+21,Jewish (other),נז,953
+21,Jewish (other),קף,805
+21,Jewish (other),י,769
+21,Jewish (other),ר,621
+21,Jewish (other),ףז,599
+21,Jewish (other),קי,490
+21,Jewish (other),קן,410
+21,Jewish (other),ףץ,351
+21,Jewish (other),ףך,348
+21,Jewish (other),ףי,333
+21,Jewish (other),ץ,333
+21,Jewish (other),ךק,321
+21,Jewish (other),יץ,304
+21,Jewish (other),יז,277
+21,Jewish (other),ףנ,259
+21,Jewish (other),ןנ,252
+21,Jewish (other),ןך,177
+21,Jewish (other),ץי,158
+21,Jewish (other),זך,154
+21,Jewish (other),ין,103
+21,Double envelope,מחל,70073
+21,Double envelope,פה,68702
+21,Double envelope,ז,15766
+21,Double envelope,אמת,11111
+21,Double envelope,טב,10822
+21,Double envelope,נ,10645
+21,Double envelope,שס,10064
+21,Double envelope,מרצ,8155
+21,Double envelope,ג,8070
+21,Double envelope,כ,7956
+21,Double envelope,ל,4637
+21,Double envelope,ום,4197
+21,Double envelope,נר,3584
+21,Double envelope,דעם,2791
+21,Double envelope,ן,361
+21,Double envelope,ק,210
+21,Double envelope,צק,209
+21,Double envelope,נץ,152
+21,Double envelope,ר,146
+21,Double envelope,זץ,138
+21,Double envelope,י,128
+21,Double envelope,ןך,123
+21,Double envelope,ףז,109
+21,Double envelope,זי,86
+21,Double envelope,נז,82
+21,Double envelope,קי,61
+21,Double envelope,קף,57
+21,Double envelope,ףי,53
+21,Double envelope,ףך,45
+21,Double envelope,ץ,43
+21,Double envelope,ץי,33
+21,Double envelope,ךק,31
+21,Double envelope,ףץ,29
+21,Double envelope,קן,28
+21,Double envelope,יץ,25
+21,Double envelope,ןנ,23
+21,Double envelope,זך,22
+21,Double envelope,ףנ,22
+21,Double envelope,ין,21
+21,Double envelope,יז,12
+22,Arab,ודעם,425472
+22,Arab,פה,21849
+22,Arab,מרצ,14045
+22,Arab,אמת,6892
+22,Arab,מחל,6690
+22,Arab,ל,5597
+22,Arab,כי,5223
+22,Arab,שס,5202
+22,Arab,נך,1034
+22,Arab,טב,885
+22,Arab,כף,396
+22,Arab,ג,395
+22,Arab,ק,364
+22,Arab,קץ,331
+22,Arab,קך,320
+22,Arab,ינ,233
+22,Arab,צן,178
+22,Arab,יף,177
+22,Arab,רק,162
+22,Arab,יז,145
+22,Arab,ץ,140
+22,Arab,יק,139
+22,Arab,זץ,125
+22,Arab,זכ,124
+22,Arab,צ,121
+22,Arab,נ,112
+22,Arab,ףז,99
+22,Arab,ז,54
+22,Arab,י,53
+22,Druze,פה,20014
+22,Druze,ודעם,6739
+22,Druze,ל,5534
+22,Druze,אמת,3858
+22,Druze,מחל,3808
+22,Druze,מרצ,1659
+22,Druze,שס,1455
+22,Druze,טב,470
+22,Druze,ג,169
+22,Druze,צן,95
+22,Druze,כף,63
+22,Druze,כי,33
+22,Druze,קץ,30
+22,Druze,זץ,27
+22,Druze,ק,27
+22,Druze,רק,20
+22,Druze,זכ,19
+22,Druze,יז,16
+22,Druze,קך,15
+22,Druze,יף,14
+22,Druze,נך,13
+22,Druze,ינ,12
+22,Druze,נ,9
+22,Druze,יק,8
+22,Druze,צ,8
+22,Druze,ז,4
+22,Druze,ףז,4
+22,Druze,י,2
+22,Druze,ץ,1
+22,Haredi,ג,173840
+22,Haredi,שס,76405
+22,Haredi,מחל,9351
+22,Haredi,כף,5644
+22,Haredi,טב,4576
+22,Haredi,פה,1453
+22,Haredi,ל,795
+22,Haredi,אמת,442
+22,Haredi,מרצ,246
+22,Haredi,ודעם,51
+22,Haredi,יז,43
+22,Haredi,זץ,24
+22,Haredi,ז,17
+22,Haredi,ףז,17
+22,Haredi,נ,15
+22,Haredi,רק,14
+22,Haredi,צ,12
+22,Haredi,קץ,10
+22,Haredi,יף,9
+22,Haredi,ק,9
+22,Haredi,ץ,8
+22,Haredi,קך,8
+22,Haredi,י,7
+22,Haredi,כי,6
+22,Haredi,זכ,5
+22,Haredi,צן,5
+22,Haredi,נך,4
+22,Haredi,יק,2
+22,Jewish (other),פה,1023244
+22,Jewish (other),מחל,1015815
+22,Jewish (other),ל,284209
+22,Jewish (other),טב,229914
+22,Jewish (other),שס,229539
+22,Jewish (other),אמת,188379
+22,Jewish (other),מרצ,162684
+22,Jewish (other),ג,82722
+22,Jewish (other),כף,70923
+22,Jewish (other),ודעם,25975
+22,Jewish (other),זץ,13784
+22,Jewish (other),יז,3084
+22,Jewish (other),צ,2350
+22,Jewish (other),רק,2019
+22,Jewish (other),ז,1015
+22,Jewish (other),ק,966
+22,Jewish (other),נ,835
+22,Jewish (other),ףז,831
+22,Jewish (other),כי,559
+22,Jewish (other),קץ,556
+22,Jewish (other),זכ,543
+22,Jewish (other),קך,537
+22,Jewish (other),נך,400
+22,Jewish (other),צן,376
+22,Jewish (other),ץ,370
+22,Jewish (other),יק,331
+22,Jewish (other),י,325
+22,Jewish (other),ינ,325
+22,Jewish (other),יף,279
+22,Double envelope,פה,84654
+22,Double envelope,מחל,77953
+22,Double envelope,טב,24810
+22,Double envelope,שס,17598
+22,Double envelope,ל,14019
+22,Double envelope,מרצ,13861
+22,Double envelope,אמת,13211
+22,Double envelope,ודעם,11974
+22,Double envelope,ג,11649
+22,Double envelope,כף,6583
+22,Double envelope,יז,1070
+22,Double envelope,זץ,845
+22,Double envelope,צ,562
+22,Double envelope,ףז,285
+22,Double envelope,רק,180
+22,Double envelope,כי,125
+22,Double envelope,ק,107
+22,Double envelope,ז,103
+22,Double envelope,נך,94
+22,Double envelope,ץ,73
+22,Double envelope,צן,71
+22,Double envelope,קץ,67
+22,Double envelope,יף,63
+22,Double envelope,נ,62
+22,Double envelope,קך,48
+22,Double envelope,י,47
+22,Double envelope,זכ,45
+22,Double envelope,ינ,40
+22,Double envelope,יק,17
+23,Arab,ודעם,517901
+23,Arab,פה,13063
+23,Arab,אמת,9589
+23,Arab,מחל,6955
+23,Arab,ל,4320
+23,Arab,שס,3235
+23,Arab,טב,627
+23,Arab,ינ,508
+23,Arab,קץ,342
+23,Arab,ג,321
+23,Arab,נק,302
+23,Arab,נץ,223
+23,Arab,ק,215
+23,Arab,קך,185
+23,Arab,ץ,175
+23,Arab,קי,139
+23,Arab,נז,121
+23,Arab,כן,112
+23,Arab,נ,98
+23,Arab,ףז,86
+23,Arab,ני,74
+23,Arab,כ,62
+23,Arab,יק,61
+23,Arab,יף,59
+23,Arab,יר,51
+23,Arab,יז,50
+23,Arab,ז,48
+23,Arab,זך,35
+23,Arab,י,23
+23,Druze,פה,19757
+23,Druze,ודעם,10060
+23,Druze,מחל,6239
+23,Druze,ל,5448
+23,Druze,אמת,3881
+23,Druze,שס,1534
+23,Druze,טב,279
+23,Druze,ג,155
+23,Druze,קץ,49
+23,Druze,כן,40
+23,Druze,נץ,33
+23,Druze,ינ,22
+23,Druze,ק,22
+23,Druze,נ,19
+23,Druze,נק,18
+23,Druze,כ,15
+23,Druze,קך,15
+23,Druze,ףז,13
+23,Druze,יף,10
+23,Druze,יק,9
+23,Druze,ץ,8
+23,Druze,קי,7
+23,Druze,יז,6
+23,Druze,ני,6
+23,Druze,זך,5
+23,Druze,י,5
+23,Druze,נז,3
+23,Druze,ז,2
+23,Druze,יר,2
+23,Haredi,ג,176056
+23,Haredi,שס,82652
+23,Haredi,מחל,13037
+23,Haredi,טב,4121
+23,Haredi,פה,1412
+23,Haredi,נץ,1355
+23,Haredi,ל,641
+23,Haredi,אמת,422
+23,Haredi,ודעם,54
+23,Haredi,ז,39
+23,Haredi,קץ,36
+23,Haredi,ףז,22
+23,Haredi,נ,19
+23,Haredi,נז,17
+23,Haredi,ץ,11
+23,Haredi,ני,9
+23,Haredi,י,7
+23,Haredi,כ,7
+23,Haredi,כן,7
+23,Haredi,קי,7
+23,Haredi,יז,6
+23,Haredi,יק,6
+23,Haredi,קך,5
+23,Haredi,נק,4
+23,Haredi,יף,2
+23,Haredi,ינ,1
+23,Haredi,יר,1
+23,Haredi,ק,1
+23,Jewish (other),מחל,1219169
+23,Jewish (other),פה,1088321
+23,Jewish (other),שס,242168
+23,Jewish (other),ל,240141
+23,Jewish (other),אמת,229451
+23,Jewish (other),טב,208305
+23,Jewish (other),ג,84518
+23,Jewish (other),ודעם,35415
+23,Jewish (other),נץ,16089
+23,Jewish (other),ז,3069
+23,Jewish (other),נ,2371
+23,Jewish (other),ףז,911
+23,Jewish (other),קץ,861
+23,Jewish (other),ק,663
+23,Jewish (other),כן,595
+23,Jewish (other),נז,460
+23,Jewish (other),קך,425
+23,Jewish (other),כ,373
+23,Jewish (other),ץ,363
+23,Jewish (other),יק,286
+23,Jewish (other),קי,262
+23,Jewish (other),י,252
+23,Jewish (other),נק,252
+23,Jewish (other),ני,224
+23,Jewish (other),יז,223
+23,Jewish (other),יר,192
+23,Jewish (other),זך,152
+23,Jewish (other),יף,140
+23,Jewish (other),ינ,110
+23,Double envelope,מחל,107049
+23,Double envelope,פה,97828
+23,Double envelope,טב,27357
+23,Double envelope,אמת,24137
+23,Double envelope,שס,23264
+23,Double envelope,ודעם,18077
+23,Double envelope,ג,13387
+23,Double envelope,ל,12815
+23,Double envelope,נץ,1702
+23,Double envelope,ז,623
+23,Double envelope,ףז,441
+23,Double envelope,נ,266
+23,Double envelope,קץ,87
+23,Double envelope,ק,79
+23,Double envelope,נז,66
+23,Double envelope,כ,59
+23,Double envelope,כן,58
+23,Double envelope,יז,57
+23,Double envelope,ץ,55
+23,Double envelope,קך,47
+23,Double envelope,נק,46
+23,Double envelope,ני,37
+23,Double envelope,ינ,36
+23,Double envelope,יק,27
+23,Double envelope,קי,27
+23,Double envelope,יר,25
+23,Double envelope,י,21
+23,Double envelope,זך,18
+23,Double envelope,יף,11
+24,Arab,ודעם,175952
+24,Arab,עם,154556
+24,Arab,מחל,15495
+24,Arab,מרצ,13436
+24,Arab,פה,5219
+24,Arab,ת,3274
+24,Arab,שס,3267
+24,Arab,ל,2892
+24,Arab,אמת,2868
+24,Arab,יז,1533
+24,Arab,כן,1390
+24,Arab,ב,397
+24,Arab,ט,350
+24,Arab,ינ,249
+24,Arab,ר,182
+24,Arab,קץ,134
+24,Arab,קך,132
+24,Arab,ג,131
+24,Arab,כך,107
+24,Arab,צכ,91
+24,Arab,קי,90
+24,Arab,צף,85
+24,Arab,רף,74
+24,Arab,ץ,71
+24,Arab,רנ,70
+24,Arab,נר,57
+24,Arab,צי,57
+24,Arab,יף,56
+24,Arab,ק,50
+24,Arab,יק,45
+24,Arab,יר,45
+24,Arab,ףז,45
+24,Arab,ני,44
+24,Arab,נ,38
+24,Arab,י,30
+24,Arab,זץ,28
+24,Arab,כ,27
+24,Arab,ז,25
+24,Druze,ל,10383
+24,Druze,מחל,7249
+24,Druze,ודעם,4754
+24,Druze,פה,4145
+24,Druze,כן,2790
+24,Druze,מרצ,2576
+24,Druze,שס,2055
+24,Druze,עם,1943
+24,Druze,ת,1674
+24,Druze,אמת,1461
+24,Druze,ב,795
+24,Druze,יז,153
+24,Druze,ט,73
+24,Druze,ר,53
+24,Druze,ג,20
+24,Druze,כך,19
+24,Druze,ינ,9
+24,Druze,יק,9
+24,Druze,ק,8
+24,Druze,רנ,8
+24,Druze,צף,7
+24,Druze,ץ,7
+24,Druze,יף,6
+24,Druze,צי,6
+24,Druze,צכ,6
+24,Druze,קי,6
+24,Druze,זץ,5
+24,Druze,נ,5
+24,Druze,קך,5
+24,Druze,קץ,5
+24,Druze,ז,4
+24,Druze,יר,4
+24,Druze,כ,4
+24,Druze,ני,4
+24,Druze,רף,4
+24,Druze,י,1
+24,Druze,נר,1
+24,Druze,ףז,1
+24,Haredi,ג,163305
+24,Haredi,שס,73270
+24,Haredi,ט,14511
+24,Haredi,מחל,7629
+24,Haredi,ב,1844
+24,Haredi,פה,729
+24,Haredi,ת,670
+24,Haredi,ל,660
+24,Haredi,כן,419
+24,Haredi,אמת,387
+24,Haredi,ר,355
+24,Haredi,מרצ,239
+24,Haredi,יז,127
+24,Haredi,ודעם,43
+24,Haredi,רף,36
+24,Haredi,עם,20
+24,Haredi,ףז,15
+24,Haredi,קץ,14
+24,Haredi,נ,10
+24,Haredi,י,9
+24,Haredi,ץ,8
+24,Haredi,רנ,8
+24,Haredi,יק,7
+24,Haredi,כך,7
+24,Haredi,ז,6
+24,Haredi,כ,6
+24,Haredi,זץ,4
+24,Haredi,ינ,4
+24,Haredi,קי,4
+24,Haredi,צי,3
+24,Haredi,צף,3
+24,Haredi,ני,2
+24,Haredi,ק,2
+24,Haredi,קך,2
+24,Haredi,יף,1
+24,Haredi,צכ,1
+24,Jewish (other),מחל,933483
+24,Jewish (other),פה,546017
+24,Jewish (other),כן,260922
+24,Jewish (other),ב,231107
+24,Jewish (other),אמת,229782
+24,Jewish (other),שס,213452
+24,Jewish (other),ל,206952
+24,Jewish (other),ט,183577
+24,Jewish (other),ת,181466
+24,Jewish (other),מרצ,165564
+24,Jewish (other),ג,71168
+24,Jewish (other),יז,29194
+24,Jewish (other),ודעם,20648
+24,Jewish (other),ר,15453
+24,Jewish (other),עם,3918
+24,Jewish (other),כך,1053
+24,Jewish (other),רנ,959
+24,Jewish (other),ףז,747
+24,Jewish (other),י,689
+24,Jewish (other),זץ,533
+24,Jewish (other),קץ,475
+24,Jewish (other),רף,401
+24,Jewish (other),נ,338
+24,Jewish (other),כ,337
+24,Jewish (other),יק,324
+24,Jewish (other),ני,321
+24,Jewish (other),קך,316
+24,Jewish (other),ק,297
+24,Jewish (other),צי,296
+24,Jewish (other),ז,272
+24,Jewish (other),ץ,230
+24,Jewish (other),קי,218
+24,Jewish (other),יר,177
+24,Jewish (other),נר,118
+24,Jewish (other),צכ,112
+24,Jewish (other),ינ,105
+24,Jewish (other),יף,105
+24,Jewish (other),צף,97
+24,Double envelope,מחל,103036
+24,Double envelope,פה,58002
+24,Double envelope,ב,39693
+24,Double envelope,אמת,34269
+24,Double envelope,ל,27483
+24,Double envelope,ט,27130
+24,Double envelope,כן,26736
+24,Double envelope,שס,23964
+24,Double envelope,ת,22077
+24,Double envelope,מרצ,20403
+24,Double envelope,ג,13767
+24,Double envelope,ודעם,11186
+24,Double envelope,עם,6627
+24,Double envelope,יז,3876
+24,Double envelope,ר,1303
+24,Double envelope,ףז,501
+24,Double envelope,רנ,144
+24,Double envelope,ק,106
+24,Double envelope,כך,105
+24,Double envelope,קץ,101
+24,Double envelope,נ,95
+24,Double envelope,זץ,93
+24,Double envelope,ז,88
+24,Double envelope,י,82
+24,Double envelope,צי,79
+24,Double envelope,קי,77
+24,Double envelope,רף,77
+24,Double envelope,כ,69
+24,Double envelope,ץ,69
+24,Double envelope,קך,59
+24,Double envelope,ני,58
+24,Double envelope,יק,44
+24,Double envelope,נר,44
+24,Double envelope,צכ,43
+24,Double envelope,ינ,41
+24,Double envelope,צף,34
+24,Double envelope,יר,30
+24,Double envelope,יף,28
+25,Arab,עם,177087
+25,Arab,ום,150198
+25,Arab,ד,119917
+25,Arab,מרצ,8888
+25,Arab,מחל,8641
+25,Arab,פה,6792
+25,Arab,כן,4405
+25,Arab,אמת,3109
+25,Arab,ל,2904
+25,Arab,שס,2110
+25,Arab,ט,1312
+25,Arab,ץ,593
+25,Arab,קץ,393
+25,Arab,ג,270
+25,Arab,צ,243
+25,Arab,ב,192
+25,Arab,ת,166
+25,Arab,קנ,164
+25,Arab,ך,160
+25,Arab,קך,154
+25,Arab,נץ,153
+25,Arab,אצ,145
+25,Arab,קי,122
+25,Arab,יז,121
+25,Arab,ק,115
+25,Arab,י,101
+25,Arab,יץ,101
+25,Arab,ז,98
+25,Arab,ני,96
+25,Arab,ף,88
+25,Arab,יק,86
+25,Arab,נק,80
+25,Arab,זץ,77
+25,Arab,ינ,70
+25,Arab,רז,61
+25,Arab,נר,59
+25,Arab,נף,55
+25,Arab,זך,41
+25,Arab,זנ,35
+25,Arab,נז,35
+25,Druze,כן,11911
+25,Druze,ל,7772
+25,Druze,מרצ,5537
+25,Druze,מחל,4531
+25,Druze,פה,3538
+25,Druze,ום,3388
+25,Druze,עם,2749
+25,Druze,אמת,1530
+25,Druze,ד,1198
+25,Druze,ב,949
+25,Druze,שס,574
+25,Druze,י,174
+25,Druze,קנ,161
+25,Druze,ט,142
+25,Druze,ז,136
+25,Druze,צ,46
+25,Druze,קץ,43
+25,Druze,ק,29
+25,Druze,יז,28
+25,Druze,ני,26
+25,Druze,נץ,17
+25,Druze,אצ,13
+25,Druze,נז,13
+25,Druze,נק,12
+25,Druze,ץ,12
+25,Druze,ינ,11
+25,Druze,קך,11
+25,Druze,ג,10
+25,Druze,רז,9
+25,Druze,ף,8
+25,Druze,נף,7
+25,Druze,נר,7
+25,Druze,ת,7
+25,Druze,זנ,6
+25,Druze,קי,6
+25,Druze,זץ,4
+25,Druze,יק,3
+25,Druze,יץ,2
+25,Druze,ך,1
+25,Haredi,ג,180295
+25,Haredi,שס,89965
+25,Haredi,ט,16237
+25,Haredi,מחל,7646
+25,Haredi,פה,1022
+25,Haredi,כן,895
+25,Haredi,ל,520
+25,Haredi,ב,506
+25,Haredi,אמת,267
+25,Haredi,מרצ,192
+25,Haredi,צ,180
+25,Haredi,אצ,132
+25,Haredi,קץ,78
+25,Haredi,יז,60
+25,Haredi,ום,43
+25,Haredi,עם,30
+25,Haredi,ד,19
+25,Haredi,ק,14
+25,Haredi,ת,13
+25,Haredi,ף,11
+25,Haredi,ך,10
+25,Haredi,נץ,9
+25,Haredi,קך,9
+25,Haredi,יק,7
+25,Haredi,נף,7
+25,Haredi,נק,7
+25,Haredi,ץ,7
+25,Haredi,קי,5
+25,Haredi,קנ,5
+25,Haredi,י,4
+25,Haredi,ני,4
+25,Haredi,נר,4
+25,Haredi,נז,3
+25,Haredi,רז,3
+25,Haredi,זך,2
+25,Haredi,זנ,2
+25,Haredi,ינ,1
+25,Jewish (other),מחל,986633
+25,Jewish (other),פה,758402
+25,Jewish (other),ט,427892
+25,Jewish (other),כן,366424
+25,Jewish (other),שס,268937
+25,Jewish (other),ל,176335
+25,Jewish (other),אמת,147598
+25,Jewish (other),מרצ,121827
+25,Jewish (other),ג,82475
+25,Jewish (other),ב,48357
+25,Jewish (other),ום,17276
+25,Jewish (other),קץ,13114
+25,Jewish (other),אצ,12022
+25,Jewish (other),יז,11961
+25,Jewish (other),ד,10172
+25,Jewish (other),צ,6280
+25,Jewish (other),עם,6166
+25,Jewish (other),ק,1200
+25,Jewish (other),ני,1094
+25,Jewish (other),ף,1085
+25,Jewish (other),ת,1047
+25,Jewish (other),נק,844
+25,Jewish (other),קנ,835
+25,Jewish (other),קך,808
+25,Jewish (other),רז,783
+25,Jewish (other),נץ,749
+25,Jewish (other),י,746
+25,Jewish (other),ך,427
+25,Jewish (other),ץ,295
+25,Jewish (other),יק,281
+25,Jewish (other),נז,258
+25,Jewish (other),קי,227
+25,Jewish (other),נר,224
+25,Jewish (other),זץ,178
+25,Jewish (other),נף,167
+25,Jewish (other),זך,147
+25,Jewish (other),ז,144
+25,Jewish (other),יץ,134
+25,Jewish (other),ינ,121
+25,Jewish (other),זנ,91
+25,Double envelope,מחל,107885
+25,Double envelope,פה,77681
+25,Double envelope,ט,70887
+25,Double envelope,כן,48847
+25,Double envelope,שס,31378
+25,Double envelope,ל,26156
+25,Double envelope,אמת,23488
+25,Double envelope,ג,17144
+25,Double envelope,מרצ,14349
+25,Double envelope,עם,8015
+25,Double envelope,ום,7830
+25,Double envelope,ד,7311
+25,Double envelope,ב,6771
+25,Double envelope,אצ,3489
+25,Double envelope,צ,2051
+25,Double envelope,יז,1750
+25,Double envelope,קץ,1066
+25,Double envelope,ף,536
+25,Double envelope,ת,291
+25,Double envelope,נק,272
+25,Double envelope,ק,260
+25,Double envelope,ך,148
+25,Double envelope,ני,134
+25,Double envelope,י,132
+25,Double envelope,קנ,127
+25,Double envelope,קך,96
+25,Double envelope,נץ,92
+25,Double envelope,רז,83
+25,Double envelope,ץ,81
+25,Double envelope,קי,55
+25,Double envelope,ז,52
+25,Double envelope,נז,41
+25,Double envelope,נר,40
+25,Double envelope,יק,34
+25,Double envelope,זץ,33
+25,Double envelope,ינ,31
+25,Double envelope,יץ,25
+25,Double envelope,זנ,19
+25,Double envelope,נף,19
+25,Double envelope,זך,15
+26,Arab,ודם,445878
+26,Arab,עם,309073
+26,Arab,אמת,19361
+26,Arab,דרך,9930
+26,Arab,ל,7280
+26,Arab,מחל,6453
+26,Arab,ד,1947
+26,Arab,רק,1802
+26,Arab,שס,785
+26,Arab,ב,748
+26,Arab,ט,705
+26,Arab,די,602
+26,Arab,ה,598
+26,Arab,צדק,578
+26,Arab,ך,561
+26,Arab,נקי,500
+26,Arab,בד,434
+26,Arab,נף,341
+26,Arab,קץ,315
+26,Arab,צף,261
+26,Arab,ג,252
+26,Arab,קך,241
+26,Arab,ני,183
+26,Arab,רץ,164
+26,Arab,בקר,136
+26,Arab,קה,135
+26,Arab,נץ,130
+26,Arab,פה,112
+26,Arab,יק,98
+26,Arab,בי,82
+26,Arab,י,80
+26,Arab,זץ,76
+26,Arab,ק,65
+26,Arab,נר,61
+26,Arab,זך,58
+26,Arab,ז,31
+26,Druze,דרך,21995
+26,Druze,ל,15267
+26,Druze,מחל,9957
+26,Druze,ודם,5173
+26,Druze,אמת,3978
+26,Druze,עם,3556
+26,Druze,רק,1393
+26,Druze,ך,1092
+26,Druze,די,715
+26,Druze,ב,423
+26,Druze,י,217
+26,Druze,ד,71
+26,Druze,שס,60
+26,Druze,צדק,47
+26,Druze,ט,40
+26,Druze,בי,36
+26,Druze,נקי,29
+26,Druze,בד,19
+26,Druze,רץ,19
+26,Druze,קה,12
+26,Druze,קץ,11
+26,Druze,ג,10
+26,Druze,זץ,10
+26,Druze,נף,10
+26,Druze,פה,10
+26,Druze,בקר,9
+26,Druze,ק,8
+26,Druze,זך,7
+26,Druze,יק,7
+26,Druze,נץ,7
+26,Druze,קך,6
+26,Druze,ני,4
+26,Druze,נר,4
+26,Druze,ז,3
+26,Druze,צף,3
+26,Druze,ה,2
+26,Haredi,ג,204488
+26,Haredi,שס,73810
+26,Haredi,ב,12433
+26,Haredi,מחל,7736
+26,Haredi,נר,7529
+26,Haredi,ט,6374
+26,Haredi,זך,2625
+26,Haredi,דרך,1026
+26,Haredi,רק,736
+26,Haredi,ל,560
+26,Haredi,ך,486
+26,Haredi,ני,434
+26,Haredi,די,379
+26,Haredi,אמת,369
+26,Haredi,ודם,52
+26,Haredi,עם,41
+26,Haredi,בי,24
+26,Haredi,ד,22
+26,Haredi,ז,12
+26,Haredi,צדק,12
+26,Haredi,בד,8
+26,Haredi,קץ,8
+26,Haredi,צף,7
+26,Haredi,זץ,6
+26,Haredi,רץ,6
+26,Haredi,ק,5
+26,Haredi,בקר,4
+26,Haredi,נץ,4
+26,Haredi,פה,3
+26,Haredi,קך,3
+26,Haredi,ה,2
+26,Haredi,י,2
+26,Haredi,נקי,2
+26,Haredi,קה,2
+26,Haredi,יק,1
+26,Haredi,נף,1
+26,Jewish (other),מחל,1059198
+26,Jewish (other),דרך,812806
+26,Jewish (other),רק,466961
+26,Jewish (other),אמת,315490
+26,Jewish (other),ל,288090
+26,Jewish (other),ב,276611
+26,Jewish (other),ט,238791
+26,Jewish (other),שס,202890
+26,Jewish (other),די,135891
+26,Jewish (other),ג,89333
+26,Jewish (other),ך,81687
+26,Jewish (other),ודם,34951
+26,Jewish (other),עם,12350
+26,Jewish (other),ני,7351
+26,Jewish (other),זך,6695
+26,Jewish (other),בי,5133
+26,Jewish (other),נר,2526
+26,Jewish (other),ד,1859
+26,Jewish (other),צדק,1243
+26,Jewish (other),בד,884
+26,Jewish (other),רץ,747
+26,Jewish (other),פה,651
+26,Jewish (other),קך,616
+26,Jewish (other),י,598
+26,Jewish (other),צף,594
+26,Jewish (other),בקר,536
+26,Jewish (other),קה,491
+26,Jewish (other),ק,451
+26,Jewish (other),נף,386
+26,Jewish (other),ז,375
+26,Jewish (other),קץ,360
+26,Jewish (other),נקי,347
+26,Jewish (other),יק,279
+26,Jewish (other),נץ,273
+26,Jewish (other),ה,266
+26,Jewish (other),זץ,139
+26,Double envelope,מחל,84114
+26,Double envelope,דרך,67745
+26,Double envelope,רק,60584
+26,Double envelope,ט,44541
+26,Double envelope,ב,36409
+26,Double envelope,אמת,27154
+26,Double envelope,ל,26216
+26,Double envelope,שס,21961
+26,Double envelope,ג,18521
+26,Double envelope,די,17408
+26,Double envelope,ודם,14093
+26,Double envelope,עם,12233
+26,Double envelope,ך,11837
+26,Double envelope,ני,1951
+26,Double envelope,זך,1209
+26,Double envelope,נר,1154
+26,Double envelope,בי,437
+26,Double envelope,ד,395
+26,Double envelope,צדק,204
+26,Double envelope,צף,185
+26,Double envelope,בד,120
+26,Double envelope,פה,96
+26,Double envelope,ז,87
+26,Double envelope,קץ,80
+26,Double envelope,רץ,75
+26,Double envelope,קה,72
+26,Double envelope,נץ,67
+26,Double envelope,בקר,62
+26,Double envelope,י,58
+26,Double envelope,קך,53
+26,Double envelope,ק,52
+26,Double envelope,נקי,51
+26,Double envelope,נף,49
+26,Double envelope,ה,34
+26,Double envelope,יק,27
+26,Double envelope,זץ,24

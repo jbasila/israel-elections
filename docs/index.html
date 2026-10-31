@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Knesset Turnout Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column; a control rail beside the hemicycle on wide screens, stacked on phones. */
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #12161c;
+  --ink-2: #4a515c;
+  --ink-3: #7a828e;
+  --rule: #dde1e7;
+  --bloc-er: #2a78d6;
+  --bloc-cc: #eb6834;
+  --bloc-ar: #1baf7a;
+  --empty: #c9ced6;
+  --good: #0ca30c;
+  --critical: #d03b3b;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111418; --surface: #1a1e24; --ink: #eef0f3; --ink-2: #b9c0ca; --ink-3: #8a929e; --rule: #2c323b;
+    --bloc-er: #3987e5; --bloc-cc: #d95926; --bloc-ar: #199e70; --empty: #3a414b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111418; --surface: #1a1e24; --ink: #eef0f3; --ink-2: #b9c0ca; --ink-3: #8a929e; --rule: #2c323b;
+  --bloc-er: #3987e5; --bloc-cc: #d95926; --bloc-ar: #199e70; --empty: #3a414b;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font: 16px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+main { max-width: 1080px; margin: 0 auto; display: grid; gap: 48px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.1; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; font-weight: 700; }
+p { margin: 0; max-width: 68ch; }
+.lede { color: var(--ink-2); font-size: 1.1rem; }
+.eyebrow { font: 600 0.75rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+header, section { display: grid; gap: 16px; min-width: 0; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; min-width: 0; }
+
+.lab { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 760px) { .lab { grid-template-columns: minmax(0, 1fr); } }
+.controls { display: grid; gap: 18px; align-content: start; }
+.ctl { display: grid; gap: 6px; }
+.ctl label { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-weight: 600; }
+.ctl .val { font: 600 1.1rem var(--mono); }
+.ctl small { color: var(--ink-3); font-size: 0.82rem; }
+input[type=range] { width: 100%; accent-color: var(--ink); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 8px; }
+button {
+  font: 600 0.85rem var(--body); color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 6px 12px; cursor: pointer;
+}
+button:hover { border-color: var(--ink-3); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--bloc-er); outline-offset: 2px; }
+
+.chamber { display: grid; gap: 12px; min-width: 0; }
+.chamber svg { width: 100%; height: auto; display: block; }
+.blocs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 520px) { .blocs { grid-template-columns: minmax(0, 1fr); } }
+.bloc { display: grid; gap: 2px; padding-top: 10px; border-top: 3px solid var(--c); }
+.bloc .n { font: 700 2rem/1 var(--display); }
+.bloc .d { font: 0.85rem var(--mono); color: var(--ink-3); }
+.verdict { display: flex; align-items: center; gap: 10px; font-weight: 600; flex-wrap: wrap; }
+.chip { font: 600 0.75rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 8px; border-radius: 4px; border: 1px solid currentColor; }
+.chip.maj { color: var(--good); }
+.chip.none { color: var(--ink-2); }
+
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+td.r, th.r { text-align: right; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 8px; background: var(--c); vertical-align: baseline; }
+.up { color: var(--good); } .down { color: var(--critical); }
+.out { color: var(--ink-3); }
+
+.chart { position: relative; min-width: 0; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { fill: var(--ink-3); font: 11px var(--mono); }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: var(--ink-2); }
+.tip {
+  position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 6px; padding: 8px 10px; font-size: 0.82rem; box-shadow: 0 4px 16px rgb(0 0 0 / 0.12); white-space: nowrap;
+}
+.twocol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 760px) { .twocol { grid-template-columns: minmax(0, 1fr); } }
+.note { color: var(--ink-3); font-size: 0.85rem; }
+a { color: inherit; }
+@media (prefers-reduced-motion: no-preference) { .seat { transition: fill 0.25s ease; } }
+</style>
+
+<main>
+  <header>
+    <div class="eyebrow">26th Knesset · election of 27 October 2026</div>
+    <h1>Who decides the majority? Turnout, sector by sector</h1>
+    <p class="lede">Change turnout in each sector and the 120 seats are reallocated using the real rules: the 3.25% threshold, the Bader-Ofer (D'Hondt) method and the five surplus-vote agreements. Every vote cast in a sector is scaled up or down. Double-envelope votes stay fixed.</p>
+  </header>
+
+  <section aria-labelledby="lab-h">
+    <h2 id="lab-h">Turnout lab</h2>
+    <div class="lab">
+      <div class="panel controls" id="controls"></div>
+      <div class="panel chamber">
+        <svg id="hemi" viewBox="0 0 600 320" role="img" aria-label="Knesset seats by bloc"></svg>
+        <div class="verdict" id="verdict"></div>
+        <div class="blocs" id="blocs"></div>
+      </div>
+    </div>
+    <div class="panel tablewrap">
+      <table id="parties">
+        <thead><tr><th>List</th><th>Bloc</th><th class="r">Votes</th><th class="r">Share</th><th class="r">Actual</th><th class="r">Scenario</th><th class="r">Change</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="curve-h">
+    <h2 id="curve-h">Seats as Arab turnout varies</h2>
+    <p>Each bloc's seats at every Arab turnout from 20% to 90%, holding the other sectors at their current lab values. The dashed line marks 61 seats. The steps are where a list crosses the threshold.</p>
+    <div class="panel chart" id="curve"></div>
+  </section>
+
+  <section aria-labelledby="hist-h">
+    <h2 id="hist-h">Eight elections, 2013–2026</h2>
+    <p>Turnout measured from the Central Elections Committee's results for each ballot box. Sector turnout counts only voters at their home station, so double-envelope voters (mostly soldiers) are left out and the Jewish figure is understated.</p>
+    <div class="twocol">
+      <div class="panel chart" id="hist-turnout"></div>
+      <div class="panel chart" id="hist-seats"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="m-h">
+    <h2 id="m-h">How sectors are drawn</h2>
+    <p class="note">Arab: localities the Central Bureau of Statistics classifies as non-Jewish or Bedouin, plus ballot boxes in mixed cities where Arab-led lists won at least 50%. Druze: 16 Druze-majority localities. Haredi: ballot boxes where UTJ, Shas and Haredi Public won at least 75%. This is a conservative core that captures about 45% of Haredi-list votes; turnout comes out at 74% at any cutoff between 50% and 90%. Jewish (other): everything else. The model validates exactly against the official result. Code and data: <a href="https://github.com/jbasila/israel-elections">github.com/jbasila/israel-elections</a>.</p>
+  </section>
+</main>
+
+<script>
+const D = {"parties": ["Likud", "Yashar", "Together", "Joint List", "The Democrats", "Yisrael Beiteinu", "Ra'am", "Otzma Yehudit", "United Torah Judaism", "Shas", "Religious Zionism – Zehut", "The Reservists – New Economic", "Amcha Yisrael", "The Color Black", "Haredi Public", "Noam", "Tzomet – Beit Yisrael", "Partnership for Everyone", "Sharshar for Love and Unity of the People", "Together We Will Succeed", "Pirate Party of Israel", "Hakahal Party", "Israel First–Ale Yarok", "Fixing the Electoral and Governing System", "New Order", "Garden of Eden", "Ani VeAta", "Shema", "Just Law", "Dawn's Light", "Women's Voice", "Redemption", "Social Security", "Personal Security", "The Bible Bloc", "Eternal Covenant"], "sectorVotes": {"Arab": {"Joint List": 445878, "Ra'am": 309073, "The Democrats": 19361, "Yashar": 9930, "Yisrael Beiteinu": 7280, "Likud": 6453, "Partnership for Everyone": 1947, "Together": 1802, "Shas": 785, "Otzma Yehudit": 748, "Religious Zionism – Zehut": 705, "The Reservists – New Economic": 602, "Garden of Eden": 598, "Sharshar for Love and Unity of the People": 578, "Amcha Yisrael": 561, "Fixing the Electoral and Governing System": 500, "Together We Will Succeed": 434, "Shema": 341, "Just Law": 315, "Pirate Party of Israel": 261, "United Torah Judaism": 252, "New Order": 241, "Noam": 183, "Hakahal Party": 164, "Dawn's Light": 136, "Women's Voice": 135, "Personal Security": 130, "Ani VeAta": 112, "The Bible Bloc": 98, "Tzomet – Beit Yisrael": 82, "Israel First–Ale Yarok": 80, "Eternal Covenant": 76, "Redemption": 65, "The Color Black": 61, "Haredi Public": 58, "Social Security": 31}, "Druze": {"Yashar": 21995, "Yisrael Beiteinu": 15267, "Likud": 9957, "Joint List": 5173, "The Democrats": 3978, "Ra'am": 3556, "Together": 1393, "Amcha Yisrael": 1092, "The Reservists – New Economic": 715, "Otzma Yehudit": 423, "Israel First–Ale Yarok": 217, "Partnership for Everyone": 71, "Shas": 60, "Sharshar for Love and Unity of the People": 47, "Religious Zionism – Zehut": 40, "Tzomet – Beit Yisrael": 36, "Fixing the Electoral and Governing System": 29, "Together We Will Succeed": 19, "Hakahal Party": 19, "Women's Voice": 12, "Just Law": 11, "United Torah Judaism": 10, "Eternal Covenant": 10, "Shema": 10, "Ani VeAta": 10, "Dawn's Light": 9, "Redemption": 8, "Haredi Public": 7, "The Bible Bloc": 7, "Personal Security": 7, "New Order": 6, "Noam": 4, "The Color Black": 4, "Social Security": 3, "Pirate Party of Israel": 3, "Garden of Eden": 2}, "Haredi": {"United Torah Judaism": 204488, "Shas": 73810, "Otzma Yehudit": 12433, "Likud": 7736, "The Color Black": 7529, "Religious Zionism – Zehut": 6374, "Haredi Public": 2625, "Yashar": 1026, "Together": 736, "Yisrael Beiteinu": 560, "Amcha Yisrael": 486, "Noam": 434, "The Reservists – New Economic": 379, "The Democrats": 369, "Joint List": 52, "Ra'am": 41, "Tzomet – Beit Yisrael": 24, "Partnership for Everyone": 22, "Social Security": 12, "Sharshar for Love and Unity of the People": 12, "Together We Will Succeed": 8, "Just Law": 8, "Pirate Party of Israel": 7, "Eternal Covenant": 6, "Hakahal Party": 6, "Redemption": 5, "Dawn's Light": 4, "Personal Security": 4, "Ani VeAta": 3, "New Order": 3, "Garden of Eden": 2, "Israel First–Ale Yarok": 2, "Fixing the Electoral and Governing System": 2, "Women's Voice": 2, "The Bible Bloc": 1, "Shema": 1}, "Jewish (other)": {"Likud": 1059198, "Yashar": 812806, "Together": 466961, "The Democrats": 315490, "Yisrael Beiteinu": 288090, "Otzma Yehudit": 276611, "Religious Zionism – Zehut": 238791, "Shas": 202890, "The Reservists – New Economic": 135891, "United Torah Judaism": 89333, "Amcha Yisrael": 81687, "Joint List": 34951, "Ra'am": 12350, "Noam": 7351, "Haredi Public": 6695, "Tzomet – Beit Yisrael": 5133, "The Color Black": 2526, "Partnership for Everyone": 1859, "Sharshar for Love and Unity of the People": 1243, "Together We Will Succeed": 884, "Hakahal Party": 747, "Ani VeAta": 651, "New Order": 616, "Israel First–Ale Yarok": 598, "Pirate Party of Israel": 594, "Dawn's Light": 536, "Women's Voice": 491, "Redemption": 451, "Shema": 386, "Social Security": 375, "Just Law": 360, "Fixing the Electoral and Governing System": 347, "The Bible Bloc": 279, "Personal Security": 273, "Garden of Eden": 266, "Eternal Covenant": 139}, "Double envelope": {"Likud": 84114, "Yashar": 67745, "Together": 60584, "Religious Zionism – Zehut": 44541, "Otzma Yehudit": 36409, "The Democrats": 27154, "Yisrael Beiteinu": 26216, "Shas": 21961, "United Torah Judaism": 18521, "The Reservists – New Economic": 17408, "Joint List": 14093, "Ra'am": 12233, "Amcha Yisrael": 11837, "Noam": 1951, "Haredi Public": 1209, "The Color Black": 1154, "Tzomet – Beit Yisrael": 437, "Partnership for Everyone": 395, "Sharshar for Love and Unity of the People": 204, "Pirate Party of Israel": 185, "Together We Will Succeed": 120, "Ani VeAta": 96, "Social Security": 87, "Just Law": 80, "Hakahal Party": 75, "Women's Voice": 72, "Personal Security": 67, "Dawn's Light": 62, "Israel First–Ale Yarok": 58, "New Order": 53, "Redemption": 52, "Fixing the Electoral and Governing System": 51, "Shema": 49, "Garden of Eden": 34, "The Bible Bloc": 27, "Eternal Covenant": 24}}, "measured": {"Arab": 78.38, "Druze": 62.0, "Haredi": 74.25, "Jewish (other)": 70.61}, "registered": {"Arab": 1039018, "Druze": 104531, "Haredi": 431968, "Jewish (other)": 5756464, "Double envelope": 0}, "agreements": [["Yashar", "The Democrats"], ["Together", "Yisrael Beiteinu"], ["Likud", "Religious Zionism – Zehut"], ["Shas", "United Torah Judaism"], ["Joint List", "Ra'am"]], "blocs": {"Likud": "Extreme Right", "Otzma Yehudit": "Extreme Right", "Religious Zionism – Zehut": "Extreme Right", "Shas": "Extreme Right", "United Torah Judaism": "Extreme Right", "Yashar": "Change Coalition", "Together": "Change Coalition", "The Democrats": "Change Coalition", "Yisrael Beiteinu": "Change Coalition", "Joint List": "Arab Parties", "Ra'am": "Arab Parties"}, "history": [{"knesset": "19", "date": "2013-01-22", "arab": 55.9, "haredi": 77.59, "jewish": 64.48, "seats": 11, "lists": "Hadash 4; United Arab List–Ta'al 4; Balad 3"}, {"knesset": "20", "date": "2015-03-17", "arab": 63.5, "haredi": 78.76, "jewish": 68.75, "seats": 13, "lists": "Joint List 13"}, {"knesset": "21", "date": "2019-04-09", "arab": 48.15, "haredi": 74.78, "jewish": 66.8, "seats": 10, "lists": "Hadash–Ta'al 6; Ra'am–Balad 4"}, {"knesset": "22", "date": "2019-09-17", "arab": 58.79, "haredi": 75.73, "jewish": 66.03, "seats": 13, "lists": "Joint List 13"}, {"knesset": "23", "date": "2020-03-02", "arab": 64.54, "haredi": 74.8, "jewish": 66.28, "seats": 15, "lists": "Joint List 15"}, {"knesset": "24", "date": "2021-03-23", "arab": 43.91, "haredi": 70.93, "jewish": 63.39, "seats": 10, "lists": "Joint List 6; Ra'am 4"}, {"knesset": "25", "date": "2022-11-01", "arab": 52.93, "haredi": 73.89, "jewish": 65.2, "seats": 10, "lists": "Hadash–Ta'al 5; Ra'am 5; Balad 0 (below threshold)"}, {"knesset": "26", "date": "2026-10-27", "arab": 78.38, "haredi": 74.25, "jewish": 70.61, "seats": 19, "lists": "Joint List 11; Ra'am 8"}]};
+const BLOC_ORDER = ["Arab Parties", "Change Coalition", "Extreme Right"];
+const BLOC_VAR = { "Extreme Right": "--bloc-er", "Change Coalition": "--bloc-cc", "Arab Parties": "--bloc-ar" };
+const SECTORS = [
+  { key: "Arab", label: "Arab" },
+  { key: "Haredi", label: "Haredi (core)" },
+  { key: "Druze", label: "Druze" },
+  { key: "Jewish (other)", label: "Jewish (other)" },
+];
+const PRESETS = [
+  { label: "Actual", t: {} },
+  { label: "Arab as 2022", t: { Arab: D.history.find(h => h.knesset === "25").arab } },
+  { label: "Arab as 2021 low", t: { Arab: D.history.find(h => h.knesset === "24").arab } },
+  { label: "Haredi 90%", t: { Haredi: 90 } },
+];
+const state = Object.fromEntries(SECTORS.map(s => [s.key, D.measured[s.key]]));
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmt = n => n.toLocaleString("en-US");
+
+// --- seat allocation (mirror of scripts/seats.py) ---
+function dhondt(votes, seats) {
+  const alloc = Object.fromEntries(Object.keys(votes).map(p => [p, 0]));
+  for (let i = 0; i < seats; i++) {
+    let best = null, bestQ = -1;
+    for (const p in votes) { const q = votes[p] / (alloc[p] + 1); if (q > bestQ) { bestQ = q; best = p; } }
+    alloc[best]++;
+  }
+  return alloc;
+}
+function allocate(votes) {
+  const total = Object.values(votes).reduce((a, b) => a + b, 0);
+  const passed = {};
+  for (const p in votes) if (votes[p] >= 0.0325 * total) passed[p] = votes[p];
+  const blocs = {}, members = {}, paired = new Set();
+  for (const [a, b] of D.agreements) if (a in passed && b in passed) {
+    const k = a + "|" + b; blocs[k] = passed[a] + passed[b]; members[k] = [a, b]; paired.add(a); paired.add(b);
+  }
+  for (const p in passed) if (!paired.has(p)) { blocs[p] = passed[p]; members[p] = [p]; }
+  const result = Object.fromEntries(Object.keys(votes).map(p => [p, 0]));
+  const bs = dhondt(blocs, 120);
+  for (const k in bs) Object.assign(result, dhondt(Object.fromEntries(members[k].map(p => [p, passed[p]])), bs[k]));
+  return { seats: result, threshold: 0.0325 * total, passed };
+}
+function scenario(t) {
+  const votes = Object.fromEntries(D.parties.map(p => [p, 0]));
+  for (const s in D.sectorVotes) {
+    const f = s in t ? t[s] / D.measured[s] : 1;
+    for (const p in D.sectorVotes[s]) votes[p] += D.sectorVotes[s][p] * f;
+  }
+  for (const p in votes) votes[p] = Math.round(votes[p]);
+  return { votes, ...allocate(votes) };
+}
+function blocSeats(seats) {
+  const b = Object.fromEntries(BLOC_ORDER.map(k => [k, 0]));
+  for (const p in D.blocs) b[D.blocs[p]] += seats[p];
+  return b;
+}
+const ACTUAL = scenario({});
+
+// --- controls ---
+const ctl = document.getElementById("controls");
+for (const s of SECTORS) {
+  const id = "t-" + s.key.replace(/\W+/g, "-").toLowerCase();
+  const div = document.createElement("div");
+  div.className = "ctl";
+  div.innerHTML = `<label for="${id}">${s.label} turnout <span class="val num" id="${id}-v"></span></label>
+    <input type="range" id="${id}" min="15" max="95" step="0.5" value="${state[s.key]}">
+    <small>Measured ${D.measured[s.key]}% · ${fmt(D.registered[s.key])} registered</small>`;
+  ctl.appendChild(div);
+  const input = div.querySelector("input");
+  input.addEventListener("input", () => { state[s.key] = +input.value; render(); });
+  s.input = input; s.out = div.querySelector(".val");
+}
+const btns = document.createElement("div");
+btns.className = "btnrow";
+for (const pr of PRESETS) {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = pr.label;
+  b.addEventListener("click", () => {
+    for (const s of SECTORS) state[s.key] = s.key in pr.t ? pr.t[s.key] : D.measured[s.key];
+    for (const s of SECTORS) s.input.value = state[s.key];
+    render();
+  });
+  btns.appendChild(b);
+}
+ctl.appendChild(btns);
+
+// --- hemicycle: 120 seats in 6 rows, filled left (Arab) to right (Extreme Right) ---
+const hemi = document.getElementById("hemi");
+const SEATS = (() => {
+  const rows = 6, r0 = 120, r1 = 270, cx = 300, cy = 290;
+  const radii = Array.from({ length: rows }, (_, i) => r0 + (r1 - r0) * i / (rows - 1));
+  const sum = radii.reduce((a, b) => a + b, 0);
+  let counts = radii.map(r => Math.round(120 * r / sum));
+  counts[rows - 1] += 120 - counts.reduce((a, b) => a + b, 0);
+  const pts = [];
+  radii.forEach((r, i) => {
+    for (let j = 0; j < counts[i]; j++) {
+      const a = Math.PI - Math.PI * j / (counts[i] - 1);
+      pts.push({ x: cx + r * Math.cos(a), y: cy - r * Math.sin(a), a });
+    }
+  });
+  pts.sort((p, q) => q.a - p.a);
+  return pts;
+})();
+hemi.innerHTML = SEATS.map(p => `<circle class="seat" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="9"><title></title></circle>`).join("")
+  + `<text x="300" y="250" text-anchor="middle" font-family="var(--display)" font-size="44" font-weight="700" fill="currentColor" id="hemi-n"></text>
+     <text x="300" y="278" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="currentColor" opacity="0.6">61 needed for a majority</text>`;
+hemi.style.color = "var(--ink)";
+
+function render() {
+  for (const s of SECTORS) s.out.textContent = state[s.key].toFixed(1) + "%";
+  const sc = scenario(state);
+  const b = blocSeats(sc.seats), a = blocSeats(ACTUAL.seats);
+
+  // seats: order parties by bloc, largest list first within bloc
+  const order = [];
+  for (const bl of BLOC_ORDER) {
+    D.parties.filter(p => D.blocs[p] === bl).sort((p, q) => sc.seats[q] - sc.seats[p])
+      .forEach(p => { for (let i = 0; i < sc.seats[p]; i++) order.push(p); });
+  }
+  const circles = hemi.querySelectorAll("circle");
+  circles.forEach((c, i) => {
+    const p = order[i];
+    c.style.fill = p ? `var(${BLOC_VAR[D.blocs[p]]})` : "var(--empty)";
+    c.querySelector("title").textContent = p ? `${p} (${D.blocs[p]})` : "Unallocated";
+  });
+  const lead = BLOC_ORDER.reduce((m, k) => (b[k] > b[m] ? k : m), BLOC_ORDER[0]);
+  document.getElementById("hemi-n").textContent = `${b["Extreme Right"]} – ${b["Change Coalition"] + b["Arab Parties"]}`;
+
+  const verdict = document.getElementById("verdict");
+  if (b["Extreme Right"] >= 61) verdict.innerHTML = `<span class="chip maj">Majority</span> Extreme Right governs alone with ${b["Extreme Right"]} seats.`;
+  else if (b["Change Coalition"] >= 61) verdict.innerHTML = `<span class="chip maj">Majority</span> Change Coalition governs alone with ${b["Change Coalition"]} seats.`;
+  else if (b["Change Coalition"] + b["Arab Parties"] >= 61) verdict.innerHTML = `<span class="chip none">No bloc majority</span> Change Coalition reaches 61 only with the Arab parties (${b["Change Coalition"] + b["Arab Parties"]}).`;
+  else verdict.innerHTML = `<span class="chip none">Deadlock</span> No bloc combination reaches 61.`;
+
+  document.getElementById("blocs").innerHTML = BLOC_ORDER.slice().reverse().map(k => {
+    const d = b[k] - a[k];
+    return `<div class="bloc" style="--c: var(${BLOC_VAR[k]})"><span class="eyebrow">${k}</span>
+      <span class="n num">${b[k]}</span><span class="d">${d === 0 ? "no change" : (d > 0 ? "+" : "") + d + " vs actual " + a[k]}</span></div>`;
+  }).join("");
+
+  const total = Object.values(sc.votes).reduce((x, y) => x + y, 0);
+  const rows = D.parties.filter(p => ACTUAL.seats[p] || sc.seats[p] || sc.votes[p] > 0.015 * total);
+  document.querySelector("#parties tbody").innerHTML = rows.map(p => {
+    const d = sc.seats[p] - ACTUAL.seats[p];
+    const bl = D.blocs[p];
+    const out = !(p in sc.passed);
+    return `<tr class="${out ? "out" : ""}"><td>${bl ? `<span class="sw" style="--c: var(${BLOC_VAR[bl]})"></span>` : `<span class="sw" style="--c: var(--empty)"></span>`}${p}</td>
+      <td>${bl || "None"}</td><td class="r num">${fmt(sc.votes[p])}</td><td class="r num">${(100 * sc.votes[p] / total).toFixed(2)}%</td>
+      <td class="r num">${ACTUAL.seats[p]}</td><td class="r num">${out ? "below threshold" : sc.seats[p]}</td>
+      <td class="r num ${d > 0 ? "up" : d < 0 ? "down" : ""}">${d === 0 ? "–" : (d > 0 ? "+" : "") + d}</td></tr>`;
+  }).join("");
+
+  renderCurve();
+}
+
+// --- generic line chart ---
+function lineChart(el, { series, xs, xLabel, yMin, yMax, yTicks, xTicks, ref, fmtX, fmtY, title, step }) {
+  const W = 520, H = 260, m = { l: 36, r: 12, t: 28, b: 34 };
+  const x = v => m.l + (v - xs[0]) / (xs[xs.length - 1] - xs[0]) * (W - m.l - m.r);
+  const y = v => H - m.b - (v - yMin) / (yMax - yMin) * (H - m.t - m.b);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${title}">`;
+  s += `<text x="${m.l}" y="14" style="fill: var(--ink-2); font-weight: 600">${title}</text>`;
+  for (const t of yTicks) s += `<line class="grid" x1="${m.l}" x2="${W - m.r}" y1="${y(t)}" y2="${y(t)}"/><text x="${m.l - 6}" y="${y(t) + 4}" text-anchor="end">${fmtY(t)}</text>`;
+  for (const t of xTicks) s += `<text x="${x(t)}" y="${H - m.b + 18}" text-anchor="middle">${fmtX(t)}</text>`;
+  s += `<text x="${W - m.r}" y="${H - 2}" text-anchor="end">${xLabel}</text>`;
+  if (ref != null) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(ref)}" y2="${y(ref)}" stroke="var(--ink-2)" stroke-dasharray="4 4" stroke-width="1"/><text x="${W - m.r}" y="${y(ref) - 5}" text-anchor="end">61</text>`;
+  for (const se of series) {
+    let d = "";
+    se.values.forEach((v, i) => {
+      if (step && i) d += `H${x(xs[i]).toFixed(1)}V${y(v).toFixed(1)}`;
+      else d += `${i ? "L" : "M"}${x(xs[i]).toFixed(1)},${y(v).toFixed(1)}`;
+    });
+    s += `<path d="${d}" fill="none" stroke="var(${se.color})" stroke-width="2" stroke-linejoin="round"/>`;
+    if (!step) se.values.forEach((v, i) => s += `<circle cx="${x(xs[i])}" cy="${y(v)}" r="4" fill="var(${se.color})" stroke="var(--surface)" stroke-width="2"/>`);
+    const lv = se.values[se.values.length - 1];
+    s += `<text x="${x(xs[xs.length - 1]) - 4}" y="${y(lv) - 8}" text-anchor="end" style="fill: var(--ink-2)">${se.short ?? ""}</text>`;
+  }
+  s += `<line class="xhair" y1="${m.t}" y2="${H - m.b}" stroke="var(--ink-3)" stroke-width="1" visibility="hidden"/>`;
+  s += `<rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent" class="hit"/></svg>`;
+  s += `<div class="legend">${series.map(se => `<span><span class="sw" style="--c: var(${se.color})"></span>${se.name}</span>`).join("")}</div><div class="tip" hidden></div>`;
+  el.innerHTML = s;
+  const svg = el.querySelector("svg"), tip = el.querySelector(".tip"), xh = el.querySelector(".xhair");
+  el.querySelector(".hit").addEventListener("pointermove", e => {
+    const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
+    let i = 0; xs.forEach((v, j) => { if (Math.abs(x(v) - px) < Math.abs(x(xs[i]) - px)) i = j; });
+    xh.setAttribute("x1", x(xs[i])); xh.setAttribute("x2", x(xs[i])); xh.setAttribute("visibility", "visible");
+    tip.hidden = false;
+    tip.innerHTML = `<strong>${fmtX(xs[i], true)}</strong><br>` + series.map(se => `<span class="sw" style="--c: var(${se.color})"></span>${se.name}: <span class="num">${fmtY(se.values[i], true)}</span>`).join("<br>");
+    const left = x(xs[i]) / W * r.width;
+    tip.style.left = Math.min(left + 12, r.width - tip.offsetWidth) + "px";
+    tip.style.top = "36px";
+  });
+  el.querySelector(".hit").addEventListener("pointerleave", () => { tip.hidden = true; xh.setAttribute("visibility", "hidden"); });
+}
+
+function renderCurve() {
+  const xs = []; for (let t = 20; t <= 90; t += 0.5) xs.push(t);
+  const runs = xs.map(t => blocSeats(scenario({ ...state, Arab: t }).seats));
+  lineChart(document.getElementById("curve"), {
+    title: "Seats per bloc", xs, xLabel: "Arab turnout", yMin: 0, yMax: 70, yTicks: [0, 20, 40, 60], xTicks: [20, 30, 40, 50, 60, 70, 80, 90],
+    ref: 61, step: true, fmtX: (v, long) => long ? `Arab turnout ${v}%` : v + "%", fmtY: v => v,
+    series: BLOC_ORDER.slice().reverse().map(k => ({ name: k, short: "", color: BLOC_VAR[k], values: runs.map(r => r[k]) })),
+  });
+}
+
+function renderHistory() {
+  const H = D.history, xs = H.map((_, i) => i);
+  const yr = i => H[i].date.slice(0, 4) + (H[i].knesset === "21" ? "a" : H[i].knesset === "22" ? "b" : "");
+  lineChart(document.getElementById("hist-turnout"), {
+    title: "Turnout by sector", xs, xLabel: "", yMin: 40, yMax: 85, yTicks: [40, 50, 60, 70, 80], xTicks: xs,
+    fmtX: (i, long) => long ? `${yr(i)} · Knesset ${H[i].knesset}` : yr(i), fmtY: v => v + (v % 10 ? "%" : ""),
+    series: [
+      { name: "Arab", color: "--bloc-ar", values: H.map(h => h.arab) },
+      { name: "Haredi (core)", color: "--bloc-er", values: H.map(h => h.haredi) },
+      { name: "Jewish (other)", color: "--bloc-cc", values: H.map(h => h.jewish) },
+    ],
+  });
+  lineChart(document.getElementById("hist-seats"), {
+    title: "Seats won by Arab-led lists", xs, xLabel: "", yMin: 0, yMax: 20, yTicks: [0, 5, 10, 15, 20], xTicks: xs,
+    fmtX: (i, long) => long ? `${yr(i)} · ${H[i].lists}` : yr(i), fmtY: v => v,
+    series: [{ name: "Arab-list seats", color: "--bloc-ar", values: H.map(h => h.seats) }],
+  });
+}
+
+render();
+renderHistory();
+</script>
+
+</body>
+</html>

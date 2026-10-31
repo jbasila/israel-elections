@@ -1,6 +1,6 @@
 # The Arab Minority as a Pivotal Electorate: Turnout and Power in the 26th Knesset (2026)
 
-**[Interactive explorer](docs/index.html)**: move each sector's turnout and watch the 120 seats reallocate.
+**[Interactive explorer](https://jbasila.github.io/israel-elections/)**: move each sector's turnout and watch the 120 seats reallocate.
 
 ## Abstract
 

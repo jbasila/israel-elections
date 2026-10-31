@@ -44,5 +44,5 @@ with open(os.path.join(ROOT, "docs", "explorer.html"), "w") as f:
 with open(os.path.join(ROOT, "docs", "index.html"), "w") as f:
     f.write('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-            "</head>\n<body>\n" + page + "\n</body>\n</html>\n")
+            "<style>body{margin:0}[hidden]{display:none!important}</style>\n</head>\n<body>\n" + page + "\n</body>\n</html>\n")
 print("wrote docs/explorer.html and docs/index.html")

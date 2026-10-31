@@ -1,0 +1,11 @@
+sector,locality,turnout_pct,status,source
+National,,77.97,official-uncertified,Wikipedia (CEC)
+Arab,,80,press-estimate,JNS; Washington Times
+Arab,,75,party-claim,The Jewish Chronicle
+Arab,Sakhnin,86.8,press-reported,Ynet via Mideast Journal
+Arab,Kafr Qasim,84.9,press-reported,Ynet via Mideast Journal
+Arab,Rahat,82,press-reported,Ynet via Mideast Journal
+Haredi,Elad,71,partial-early-evening,Ynet via Mideast Journal
+Haredi,Modi'in Illit,70,partial-early-evening,Ynet via Mideast Journal
+Haredi,Bnei Brak,64,partial-early-evening,Ynet via Mideast Journal
+Haredi,Beitar Illit,64,partial-early-evening,Ynet via Mideast Journal
